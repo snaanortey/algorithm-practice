@@ -8,6 +8,13 @@
  * @returns the same array but without the deleted element
  */
 function deletesElement(array, element) {
+  // If array does not contain element, return array as is
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== element) {
+      return array;
+    }
+  }
+
   // If the element to be deleted is the last element in the array, only remove that element and return the array
   const indexOfElement = array.indexOf(element);
   if (array.indexOf(element) === array.length - 1) {
@@ -43,4 +50,4 @@ function deleteElementInArray(array, element) {
   return newArray;
 }
 
-console.log(deleteElementInArray([1, 2, 3, 4], 2));
+console.log(deletesElement([1, 2, 3, 4], 5));
