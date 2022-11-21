@@ -1,18 +1,22 @@
 // Given an array, find the index of the largest element
 
-let array = [2,904,56,999]
+let arr = [2, 904, 560878, -999999, 7009];
 // loop through the array
 // on the first loop, check if array[i]>array[i+1]
 // If array[i]> array[i+1], drop array[1+1]
 // Now compare array[i] with array[i+2]
 
-function indexOfLargestNumber (array) {
-for(let i=0; i<array.length; i++) {
-    while(array[i]>array[i+1]) {
-        return  array[i];
-    }
+/**
+ * A function that returns that index of the largest number in an array
+ * @param {*} array Array of numbers
+ * @returns Largest number in the array
+ */
+function indexOfLargestNumber(array) {
+    var largestNum = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largestNum) largestNum = array[i];
+  }
+  return array.indexOf(largestNum);
 }
 
-}
-
-console.log(indexOfLargestNumber(array)); 
+console.log(indexOfLargestNumber(arr));
