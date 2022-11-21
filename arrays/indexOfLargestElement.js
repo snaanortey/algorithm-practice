@@ -1,10 +1,6 @@
 // Given an array, find the index of the largest element
 
 let arr = [2, 904, 560878, -999999, 7009];
-// loop through the array
-// on the first loop, check if array[i]>array[i+1]
-// If array[i]> array[i+1], drop array[1+1]
-// Now compare array[i] with array[i+2]
 
 /**
  * A function that returns that index of the largest number in an array
@@ -20,3 +16,6 @@ function indexOfLargestNumber(array) {
 }
 
 console.log(indexOfLargestNumber(arr));
+
+// Edge case
+// All numbers in array are the same so there is no largest element
