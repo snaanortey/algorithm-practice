@@ -7,22 +7,22 @@
  * HERE, WE ARE ASSUMING THAT ALL ELEMENTS OF THE ARRAY ARE ALWAYS POSITIVE
  */
 
-function longestEvenOddSubAray(arrat) {
-  let max = 0;
-  let curr = arrat[0];
+function longestEvenOddSubArray(arrat) {
+  let curr = [];
+  let max = [];
   for (let i = 0; i < arrat.length; i++) {
     if (arrat[i] % 2 === 0 && arrat[i + 1] % 2 === 0) {
-      curr = Math.max(arrat[i], arrat[i + 1]);
+      curr = curr;
     } else {
-      curr = curr + arrat[i + 1];
+      curr.push(arrat[i]);
     }
-    if (curr > max) {
-      max = curr;
-    }
+    if (curr.length >= max.length) max = curr;
   }
-  return max;
+  return max.length;
 }
 
-console.log(longestEvenOddSubAray([10, 12, 14, 7, 8]));
-console.log(longestEvenOddSubAray([7, 10, 13, 14]));
-console.log(longestEvenOddSubAray([10, 12, 8, 4]));
+console.log(longestEvenOddSubArray([10, 12, 14, 7, 8]));
+console.log(longestEvenOddSubArray([7, 10, 13, 14]));
+console.log(longestEvenOddSubArray([10, 12, 8, 4]));
+
+module.exports = longestEvenOddSubArray;
