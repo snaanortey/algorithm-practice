@@ -6,7 +6,7 @@ describe("longestEvenOddSubArray", () => {
     expect(longestEvenOddSubArray([10, 12, 14, 7, 8])).toBe(3);
   });
 
-  test.only("should return -1 when the length of the array", () => {
+  test.only("should return -1 when the length of the array is zero", () => {
     expect(longestEvenOddSubArray([])).toBe(-1);
   });
 });

@@ -8,6 +8,7 @@
  */
 
 function longestEvenOddSubArray(arrat) {
+  if(arrat.length===0) return -1;
   let curr = [];
   let max = [];
   for (let i = 0; i < arrat.length; i++) {
