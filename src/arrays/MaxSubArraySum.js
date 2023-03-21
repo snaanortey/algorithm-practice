@@ -10,8 +10,6 @@
  * EXAMPLE FOR ARRAY4=[-6,-1,-8], [-1] IS IS THE MAX POSSIBLE SUBARRAY
  */
 
-newArray = [1, -2, 3, -1, 2];
-
 function maxSubArray(givenArray) {
   let sumRes = 0;
   for (let i = givenArray[0]; i < givenArray.length; i++) {
@@ -26,4 +24,20 @@ function maxSubArray(givenArray) {
   return sumRes;
 }
 
-console.log(maxSubArray(newArray));
+// Using Kadane's algorithm
+
+newArray = [1, -2, 3, -1, 2,9,-9,47];
+
+function maxSubArrayKadane(array) {
+  let curr = array[0];
+  let max = array[0];
+  for (let i = 1; i < array.length; i++) {
+    curr = Math.max(array[i], curr + array[i]);
+    if (curr > max) {
+      max = curr;
+    }
+  }
+  return max;
+}
+
+console.log(maxSubArrayKadane(newArray));

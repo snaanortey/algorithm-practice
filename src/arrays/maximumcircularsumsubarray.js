@@ -23,4 +23,15 @@ function maximumcircularsumsubarray(array) {
 
 console.log(maximumcircularsumsubarray([5, -2, 3, 4]));
 
+// To come back to this when I have time. It takes the max sum in the normal subarray
+// then take the max sum in the circular subarray (this is gotten by finding the min sum in the normal subarray and 
+// substracting that from the total sum of the array)
+// Then compare the max of the two and that is the results
+// But this does not work for when the array is full of negative numbers
+// function maximumcircularsumsubarrayKadane (array){
+//   if(array.forEach(element=>element<0)){
+//     return 
+//   }
+// }
+
 module.exports = maximumcircularsumsubarray
