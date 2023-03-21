@@ -9,39 +9,39 @@
 // Assumptions: array is not empty, and k is less than the length of the array.
 
 function slidingWindows(array, k) {
-  let max = 0;
-  for (let i = 0; i < array.length; i++) {
+    let max = 0;
+    for (let i = 0; i < array.length; i++) {
+      let curr = 0;
+      for (let j = i; j <= i + (k - 1); j++) {
+        curr = curr + array[j];
+        if (curr > max) {
+          max = curr;
+        }
+      }
+    }
+    return max;
+  }
+
+function slidingWindowTechnique(array, k) {
+    let max = 0;
     let curr = 0;
-    for (let j = i; j <= i + (k - 1); j++) {
-      curr = curr + array[j];
+    for (let i = 0; i < k; i++) {
+      curr = curr + array[i];
       if (curr > max) {
         max = curr;
       }
     }
-  }
-  return max;
-}
-
-function slidingWindowsTechnique(array, k) {
-  let max = 0;
-  let curr = 0;
-  for (let i = 0; i < k; i++) {
-    curr = curr + array[i];
-    if (curr > max) {
-      max = curr;
+    for (let i = k; i < array.length; i++) {
+      curr = curr + array[i] - array[i - k];
+      if (curr > max) {
+        max = curr;
+      }
     }
+    return max;
   }
-  for (let i = k; i < array.length; i++) {
-    curr = curr + array[i] - array[i - k];
-    if (curr > max) {
-      max = curr;
-    }
-  }
-  return max;
-}
 
-// console.log(slidingWindows([5,-10,6,90,3],2));
+console.log(slidingWindows([5, -10, 6, 90, 3], 2));
 
-console.log(slidingWindowsTechnique([1, 8, 30, -5, 20, 7], 3));
+console.log(slidingWindowTechnique([1, 8, 30, -5, 20, 7], 3));
 
-module.exports = slidingWindowsTechnique;
+module.exports = slidingWindowTechnique;
